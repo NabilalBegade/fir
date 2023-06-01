@@ -11,28 +11,15 @@ export default function Home() {
     const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
     const { data: officer } = useContractRead(contract, "officer")
 
-    return ( <
-        div className = "" >
-        <
-        Head >
-        <
-        title > Complaint App < /title> <
-        meta name = "description"
-        content = "This is a police complaint app" / >
-        <
-        link rel = "icon"
-        href = "/favicon.ico" / >
-        <
-        /Head> <
-        Header / >
-        <
-        Complaint / >
-        <
-        Status / > {
-            officer === address && ( <
-                Admin / >
-            )
-        } <
-        /div>
+    return ( <div className = "" >
+        <Head >
+        <title > Complaint App < /title>
+        <meta name = "description"content = "This is a police complaint app" / >
+        <link rel = "icon" href = "/favicon.ico" / >
+        </Head> 
+        <Header / >
+        <Complaint / >
+        <Status / > {officer === address && ( <Admin / >)} 
+        </div>
     )
 }
